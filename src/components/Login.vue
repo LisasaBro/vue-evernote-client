@@ -34,7 +34,7 @@
 </template>
 <script>
 import Auth from '../apis/auth'
-
+import Bus from '../helpers/bus'
 export default {
   data() {
     return {
@@ -105,6 +105,7 @@ export default {
       }).then(data => {
         this.login.isError = false
         this.login.notice = ''
+        Bus.$emit('userInfo',{username:this.login.username})
         this.$router.push({path:'note'})
         console.log(data)
       }).catch(data =>{
@@ -139,7 +140,7 @@ export default {
 .modal-container {
   width: 800px;
   height: 500px;
-  margin: 0px auto;
+  margin: 0 auto;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
@@ -184,7 +185,7 @@ export default {
     }
 
     .login, .register {
-      padding: 0px 20px;
+      padding: 0 20px;
       border-top: 1px solid #eee;
       height: 0;
       overflow: hidden;
