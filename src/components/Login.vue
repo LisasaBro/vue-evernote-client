@@ -78,7 +78,7 @@ export default {
       Auth.register({
         username: this.register.username,
         password: this.register.password
-      }).then(data => {
+      }).then(() => {
         this.register.isError = false
         this.register.notice = ''
         this.$router.push({path:'noteBooks'})
@@ -106,7 +106,7 @@ export default {
         this.login.isError = false
         this.login.notice = ''
         Bus.$emit('userInfo',{username:this.login.username})
-        this.$router.push({path:'note'})
+        this.$router.push({path:'note/2'})
         console.log(data)
       }).catch(data =>{
         this.login.isError = true

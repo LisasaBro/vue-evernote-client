@@ -34,11 +34,12 @@ export default {
   text-align: center;
   line-height: 32px;
   border-radius: 50%;
-  background: #f2b81c;
-  color: #fff;
-  text-shadow: 1px 0 1px #795c19;
+  background: white;
+  color:black;
+  text-shadow: 1px 0 1px pink;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 18px;
   margin-top: 15px;
+  cursor: pointer;
 }</style>
