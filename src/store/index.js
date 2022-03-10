@@ -4,6 +4,7 @@ import notebook from './modules/notebook'
 // import note from './modules/note'
 //import trash from './modules/trash'
 //import user from './modules/user'
+import trash from './modules/trash'
 import note from './modules/note'
 import user from './modules/user'
 Vue.use(Vuex)
@@ -12,7 +13,7 @@ export default new Vuex.Store({
   modules: {
     notebook,
     note,
-   // trash,
+   trash,
    user
   }
 })
