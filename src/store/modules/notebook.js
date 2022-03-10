@@ -40,7 +40,7 @@ const mutations = {
 }
 
 const actions = {
-  getNotebooks({ commit,state }) {
+  getNotebooks({ commit, state }) {
     if(state.notebooks !== null) return Promise.resolve()
     return Notebook.getAll()
       .then(res => {

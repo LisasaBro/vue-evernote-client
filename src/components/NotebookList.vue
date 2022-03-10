@@ -7,13 +7,13 @@
       <div class="layout">
         <h3>笔记本列表({{notebooks.length}})</h3>
         <div class="book-list">
-          <router-link v-for="(notebook,index) in notebooks" :key="index" :to="`/note?notebookId=${notebook.id}`" class="notebook">
+          <router-link v-for="notebook in notebooks" :key="notebook.id" :to="`/note?notebookId=${notebook.id}`" class="notebook">
             <div>
               <span class="iconfont icon-notebook"></span> {{notebook.title}}
               <span>{{notebook.noteCounts}}</span>
               <span class="action" @click.stop.prevent="onEdit(notebook)">编辑</span>
               <span class="action" @click.stop.prevent="onDelete(notebook)">删除</span>
-              <span class="date">{{notebook.friendlyCreatedAt}}</span>
+              <span class="date">{{notebook.createdAtFriendly}}</span>
             </div>
           </router-link>
         </div>
@@ -24,8 +24,7 @@
   </div>
 </template>
 <script>
-import Auth from '@/apis/auth'
-import Notebooks from '@/apis/notebooks'
+
 import { friendlyDate } from '@/helpers/util'
 import { mapState, mapActions, mapGetters } from 'vuex'
 

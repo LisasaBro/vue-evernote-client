@@ -1,22 +1,25 @@
-<template><span :title="username">{{ slug }}</span></template>
+<template>
+  <span :title="username">{{slug}}</span>
+</template>
+
 <script>
-import Auth from '../apis/auth'
-import Bus from '../helpers/bus'
-import {mapGetters, mapActions} from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
-
   data() {
     return {}
   },
+
   created() {
     this.setUser()
   },
-  methods:{
+
+  methods: {
     ...mapActions({
-      'setUser':'checkLogin'
+      'setUser': 'checkLogin'
     })
   },
+
   computed: {
     ...mapGetters([
       'username',
@@ -24,21 +27,22 @@ export default {
     ])
   }
 }
-
 </script>
-<style scoped>span {
+
+<style scoped>
+span {
   display: inline-block;
   width: 30px;
   height: 30px;
   text-align: center;
   line-height: 32px;
   border-radius: 50%;
-  background: white;
-  color: black;
-  text-shadow: 1px 0 1px pink;
+  background: #f2b81c;
+  color: #fff;
+  text-shadow: 1px 0 1px #795c19;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 18px;
   margin-top: 15px;
-  cursor: pointer;
-}</style>
+}
+</style>

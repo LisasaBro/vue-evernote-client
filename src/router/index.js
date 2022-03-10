@@ -11,19 +11,20 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Login
+      alias:'/notebooks',
+      component: ()=>import('../components/NotebookList')
     },
     {
-      path: '/notebooks',
-      component: notebookList
+      path: '/login',
+      component: ()=>import('../components/Login')
     },
     {
       path: '/note',
-      component: noteDetail
+      component: ()=>import('../components/NoteDetail')
     },
     {
       path:'/trash',
-      component:TrashDetail
+      component: ()=>import('../components/TrashDetail')
     }
   ]
 })
